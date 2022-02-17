@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<!--
+IMPORTANT:
+Start from the previous Musical assignment project you've created on M2-D2
+    
+ASSIGNMENT RULES
+- The project must be pushed to a new repository and linked in EduFlow by the end of the day.
+- You can google / use StackOverflow BUT we suggest you to use just the material provided and documentation.
+- To test the page, open it with your browser and inspect it with developer tools / device emulator.
+- Use Bootstrap4.6 classes to create the page.
+- Use containers, rows and cols in order to achieve a great responsive layout.
+NOTE:
+Most of the requirements in this exercises reference a bootstrap's functionality or component. 
+Make sure you check the documentation before creting anything custom.
+-->
+
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+        integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <link rel="stylesheet" href="/M2/D9/Homework/PROJ/styles.css">
+
+</head>
+
+<body>
+
+    <!-- EXERCISE 1
+        Create a Jumbotron section with a quick explanation / image of the website.
+        Make it appear with a fade-in animation effect when the page loads.
+    -->
+
+    <!-- EXERCISE 2
+        Use a Bootstrap Card to contain every album in the favorite list you previously created.
+        Use the elements of a card bootstrap provides you with to display nicely the album informations such as: album title, artist, year, etc..
+    -->
+
+    <!-- EXERCISE 3
+        For every album in the favorite list, attach a badge on the top-left corner of the album with the genre of the music
+    -->
+
+    <!-- EXERCISE 4
+        Create a new section with an album tracklist inside a Bootstrap table.
+        The row colors of the table must be alternated.
+
+        There should be a column for the track order number, one for the title and one for the track duration.
+        (If you want, you can also add extra columns)
+    -->
+
+    <!-- EXERCISE 5
+        Add a DELETE bootstrap button at the end of each row of the tracklist. 
+        Attach the functionality to remove its row when it gets clicked. (Requires DOM manipulation)  
+
+        ## EXTRA CSS CHALLENGE ##
+        Make only one button visible at a time, for each row, when the single row gets hovered. 
+        Animate it with a fade-in effect upon the user hovering and fade-out when he/she goes away from it.
+    -->
+
+    <!-- EXERCISE 6
+        Add an "Add Track" button under the tracklist of the album. 
+        It should have a nice shadow transition when its hovered (with the box-shadow property) 
+        to look like as if the button was elevating itself.
+    -->
+
+    <!-- ############### -->
+    <!-- ###  EXTRA  ### -->
+    <!-- ############### -->
+
+    <!-- EXERCISE 7
+        On the click of "Add Track" button, a modal should appear.
+        (check in the documentation the modal + button example)
+        
+        The modal shall contain single input fields (avoid using a <form> to wrap the inputs) with:
+        - Track number
+        - Track title
+        - Track duration
+
+        The fields should be inside an Input Group and divided in 2 columns.
+    -->
+
+
+    <!-- EXERCISE 8
+        The modal should contain 2 buttons at the bottom:
+        - Add => Adds a new track in the tracklist with the data of the input fields.
+        - Close => closes the modal
+
+        https://getbootstrap.com/docs/4.6/components/alerts/
+        [EXTRA] Make the message disappear after 5 seconds
+        https://www.w3schools.com/jsref/met_win_settimeout.asp
+    -->
+
+    <!-- EXERCISE 9
+        Alert the user with a success message when the track gets added, or when a track gets deleted.
+     -->
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">MUSIFY</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <!-- <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">My Profile <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Favourites</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Pricing</a>
+                </li> -->
+               <!--  <li class="nav-item"></li>
+                <nav class="navbar navbar-dark bg-dark">
+                    <form class="form-inline my-2 my-lg-0">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Search..." aria-label="Search">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                    </form> -->
+                </nav>
+            </ul>
+        </div>
+    </nav>
+    <div class="container-fluid">
+        <div class="jumbotron jumbotron-fluid bg-danger">
+            <div class="fade-in-text">
+                <div class="container ">
+                    <h1 class="display-4">My Music Albums</h1>
+                    <p class="lead">Let's dive deep on this music journey!</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <div class="row mb-5 mt-5">
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
+            <div class="card shadow border-0 ">
+                <div class="card text-center">
+                    <img src="https://static.fnac-static.com/multimedia/Images/PT/NR/2d/eb/01/125741/1540-6/tsp20160816183223/O-Concerto-Acustico-2CD.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <p class="card-title"><b>Rui Veloso</b></p>
+                        <p class="card-text">Acoustic Concert</p>
+                        <a href="#" class="btn btn-primary bg-danger">Go to Album</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
+            <div class="card shadow border-0 ">
+                <div class="card text-center">
+                    <img src="https://static.fnac-static.com/multimedia/Images/PT/NR/2d/eb/01/125741/1540-6/tsp20160816183223/O-Concerto-Acustico-2CD.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <p class="card-title"><b>Rui Veloso</b></p>
+                        <p class="card-text">Acoustic Concert</p>
+                        <a href="#" class="btn btn-primary bg-danger">Go to Album</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
+            <div class="card shadow border-0 ">
+                <div class="card text-center">
+                    <img src="https://static.fnac-static.com/multimedia/Images/PT/NR/2d/eb/01/125741/1540-6/tsp20160816183223/O-Concerto-Acustico-2CD.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <p class="card-title"><b>Rui Veloso</b></p>
+                        <p class="card-text">Acoustic Concert</p>
+                        <a href="#" class="btn btn-primary bg-danger">Go to Album</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
+            <div class="card shadow border-0 ">
+                <div class="card text-center">
+                    <img src="https://static.fnac-static.com/multimedia/Images/PT/NR/2d/eb/01/125741/1540-6/tsp20160816183223/O-Concerto-Acustico-2CD.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <p class="card-title"><b>Rui Veloso</b></p>
+                        <p class="card-text">Acoustic Concert</p>
+                        <a href="#" class="btn btn-primary bg-danger">Go to Album</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
+            <div class="card shadow border-0 ">
+                <div class="card text-center">
+                    <img src="https://static.fnac-static.com/multimedia/Images/PT/NR/2d/eb/01/125741/1540-6/tsp20160816183223/O-Concerto-Acustico-2CD.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <p class="card-title"><b>Rui Veloso</b></p>
+                        <p class="card-text">Acoustic Concert</p>
+                        <a href="#" class="btn btn-primary bg-danger">Go to Album</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
+            <div class="card shadow border-0 ">
+                <div class="card text-center">
+                    <img src="https://static.fnac-static.com/multimedia/Images/PT/NR/2d/eb/01/125741/1540-6/tsp20160816183223/O-Concerto-Acustico-2CD.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <p class="card-title"><b>Rui Veloso</b></p>
+                        <p class="card-text">Acoustic Concert</p>
+                        <a href="#" class="btn btn-primary bg-danger">Go to Album</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
+            <div class="card shadow border-0 ">
+                <div class="card text-center">
+                    <img src="https://static.fnac-static.com/multimedia/Images/PT/NR/2d/eb/01/125741/1540-6/tsp20160816183223/O-Concerto-Acustico-2CD.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <p class="card-title"><b>Rui Veloso</b></p>
+                        <p class="card-text">Acoustic Concert</p>
+                        <a href="#" class="btn btn-primary bg-danger">Go to Album</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
+            <div class="card shadow border-0 ">
+                <div class="card text-center">
+                    <img src="https://static.fnac-static.com/multimedia/Images/PT/NR/2d/eb/01/125741/1540-6/tsp20160816183223/O-Concerto-Acustico-2CD.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <p class="card-title"><b>Rui Veloso</b></p>
+                        <p class="card-text">Acoustic Concert</p>
+                        <a href="#" class="btn btn-primary bg-danger">Go to Album</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+
+    </div>
+
+
+    <div class="container-fluid bg-light mb-3">
+        <h1 class="display-3 text-center text-dark ">My Top List</h1> <br><br>
+        <div class="row mb-5 bg-light">
+
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
+                <div class="card shadow border-0">
+                    <div class="card text-center" style="width: 18rem;">
+                        <div class="fade-in-text">
+                            <div class="card-body">
+                                <img src="https://static.fnac-static.com/multimedia/PT/images_produits/PT/ZoomPE/6/2/9/4029758776926/tsp20100616152853/Pratica-Mente.jpg" class="card-img-top" alt="...">
+                                <span class="badge badge-danger">1st</span>
+                                <p class="card-title text-dark"><strong>Sam the Kid</strong></p>
+                                <p class=" card-text text-dark">Praticamente</p>
+                                <a href=" # " class="btn btn-primary bg-danger">Listen to it!</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
+                <div class="card shadow border-0">
+                    <div class="card text-center" style="width: 18rem;">
+                        <div class="fade-in-text">
+                            <div class="card-body">
+                                <img src="https://static.fnac-static.com/multimedia/PT/images_produits/PT/ZoomPE/6/2/9/4029758776926/tsp20100616152853/Pratica-Mente.jpg" class="card-img-top" alt="...">
+                                <span class="badge badge-danger">2nd</span>
+                                <p class="card-title text-dark"><strong>Sam the Kid</strong></p>
+                                <p class=" card-text text-dark">Praticamente</p>
+                                <a href=" # " class="btn btn-primary bg-danger">Listen to it!</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
+                <div class="card shadow border-0">
+                    <div class="card text-center" style="width: 18rem;">
+                        <div class="fade-in-text">
+                            <div class="card-body">
+                                <img src="https://static.fnac-static.com/multimedia/PT/images_produits/PT/ZoomPE/6/2/9/4029758776926/tsp20100616152853/Pratica-Mente.jpg" class="card-img-top" alt="...">
+                                <span class="badge badge-danger">3rd</span>
+                                <p class="card-title text-dark"><strong>Sam the Kid</strong></p>
+                                <p class=" card-text text-dark">Praticamente</p>
+                                <a href=" # " class="btn btn-primary bg-danger">Listen to it!</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
+                <div class="card shadow border-0">
+                    <div class="card text-center" style="width: 18rem;">
+                        <div class="fade-in-text">
+                            <div class="card-body">
+                                <img src="https://static.fnac-static.com/multimedia/PT/images_produits/PT/ZoomPE/6/2/9/4029758776926/tsp20100616152853/Pratica-Mente.jpg" class="card-img-top" alt="...">
+                                <span class="badge badge-danger">4th</span>
+                                <p class="card-title text-dark"><strong>Sam the Kid</strong></p>
+                                <p class=" card-text text-dark">Praticamente</p>
+                                <a href=" # " class="btn btn-primary bg-danger">Listen to it!</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <h2 class="header text-dark mb-3">Track List</h2>
+            <div class="row ">
+                <table class="table table-striped table-dark" id="tableID">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">Track order number</th>
+                            <th scope="col">Title</th>
+                            <th scope="col">Duration</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Diogo</td>
+                            <td>5 min</td>
+                            <td><button type="button" class="btn btn-dark">Delete</button></td>
+
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>Diogo</td>
+                            <td>5 min</td>
+                            <td><button type="button" class="btn btn-dark">Delete</button></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>Diogo</td>
+                            <td>5 min</td>
+                            <td><button type="button" class="btn btn-dark">Delete</button></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">4</th>
+                            <td>Diogo</td>
+                            <td>5 min</td>
+                            <td><button type="button" class="btn btn-dark">Delete</button></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">5</th>
+                            <td>Diogo</td>
+                            <td>5 min</td>
+                            <td><button type="button" class="btn btn-dark">Delete</button></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">6</th>
+                            <td>Diogo</td>
+                            <td>5 min</td>
+                            <td><button type="button" class="btn btn-dark">Delete</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <button type="button" class="btn btn-dark shadow p-3 mb-5 bg-dark rounded"  id="addtrack">Add track</button>
+
+
+
+            </div>
+            <script src=" https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+            </script>
+            
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
+            crossorigin="anonymous"></script>
+</body>
+
+</html>
